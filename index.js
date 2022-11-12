@@ -128,6 +128,53 @@ function addEmployee() {
   });
 }
 
+function updateEmployeeRole() {
+  let employeeChoices = [];
+  let roleChoices = [];
+  //  Creates an array of role choices to update an employee
+  db.query(`SELECT * FROM role`, function (err, results) {
+    roleChoices = results.map(({ id, title }) => {
+      return {
+        value: id,
+        name: title,
+      };
+    });
+    // Returns an array of all employees to select in the first question
+    db.query(`SELECT * FROM employee`, (err, results) => {
+      employeeChoices = results.map(({ id, first_name, last_name }) => {
+        return { name: `${first_name} ${last_name}`, value: id };
+      });
+      inquirer
+        .prompt([
+          {
+            type: "list",
+            name: "employee",
+            message: "Which Employee would you like to update?",
+            choices: employeeChoices,
+          },
+          {
+            type: "list",
+            name: "role",
+            message: "What is the employee's new role?",
+            choices: roleChoices,
+          },
+        ])
+        .then((answers) => {
+          const sql = `UPDATE employee SET role_id = ? WHERE id=?`;
+          const params = [answers.role, answers.employee];
+          db.query(sql, params, (err, result) => {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            console.log(result);
+            showOptions();
+          });
+        });
+    });
+  });
+}
+
 function showOptions() {
   inquirer
     .prompt([
