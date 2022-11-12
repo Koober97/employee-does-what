@@ -175,6 +175,37 @@ function updateEmployeeRole() {
   });
 }
 
+// Show all the departments
+function showDepartments() {
+  db.query(`SELECT * FROM department`, function (err, results) {
+    console.table(results);
+    showOptions();
+  });
+}
+// Function to add a department
+function addDepartment() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "department",
+        message: "What is the name of the new department?",
+      },
+    ])
+    .then(({ department }) => {
+      const sql = `INSERT INTO department(name) VALUES (?)`;
+      const params = department;
+      db.query(sql, params, (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        console.log(result);
+        showOptions();
+      });
+    });
+}
+
 function showOptions() {
   inquirer
     .prompt([
