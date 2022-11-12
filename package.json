@@ -1,24 +1,26 @@
 {
-  "name": "employee-does-what",
+  "name": "solved",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Koober97/employee-does-what.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Koober97/employee-does-what/issues"
   },
-  "homepage": "https://github.com/Koober97/employee-does-what#readme",
-  "dependencies": {
-    "console.table": "^0.10.0",
-    "inquirer": "^8.2.4",
-    "mysql2": "^2.3.3"
-  }
+  "homepage": "https://github.com/Koober97/employee-does-what#readme"
 }
