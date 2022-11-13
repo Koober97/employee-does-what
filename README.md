@@ -14,6 +14,6 @@
 ## Results
 
 - Work in Progress: Trying to fix the issue with mysql2 not loading in properly.
-- Linkk to Demo Video
+- Link to Demo Video
 
 ### Created by Brian Koo
