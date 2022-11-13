@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,15 +13,6 @@
     "console.table": "^0.10.0",
     "inquirer": "^8.2.4",
     "mysql": "^2.18.1",
-    "mysql2": "^2.2.5"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Koober97/employee-does-what.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Koober97/employee-does-what/issues"
-  },
-  "homepage": "https://github.com/Koober97/employee-does-what#readme"
+    "mysql2": "^2.3.3"
+  }
 }
